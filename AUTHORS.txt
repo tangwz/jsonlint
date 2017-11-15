@@ -1,0 +1,30 @@
+jsonlint is written based on WTForms and maintained by tangwz.
+
+Lead Developers:
+
+- tangwz <tangwz.com@gmail.com>
+
+WTForms Lead Developers:
+
+- Thomas Johansson <prencher@prencher.dk>
+- James Crasta <james@crasta.com>
+
+Contributors:
+
+- Adam Lowry
+- Ali Aafshar
+- Andreas Madsack
+- Arni Birgisson
+- Christopher Grebs
+- Dima Moroz
+- Eduardo Schettino
+- Emil Vladev
+- Harro van der Klauw
+- Jakob Holmelund
+- Jean-Philippe Serafin
+- Ricardo Bánffy
+- Rodrigo Moraes
+- Sebastian Wiesner
+- Tangwz
+- Vinay Sajip
+

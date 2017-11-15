@@ -4,5 +4,14 @@
 
 A flexible json validation for python web development.
 
+# Installation
+Install from source:
+
+    python setup.py install
+
+
+# Documentation
+Full documentation is forthcoming.
+
 # reference
 jsonlint built on [wtforms](https://github.com/wtforms/wtforms).

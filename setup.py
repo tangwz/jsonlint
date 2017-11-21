@@ -11,6 +11,7 @@ setup(
     name='jsonlint',
     version='0.1dev',
     license='BSD',
+    url='https://github.com/tangwz/jsonlint',
     author='Tangwz, Thomas Johansson, James Crasta',
     author_email='tangwz.com@gmail.com',
     description='A flexible json validation for python web development.',

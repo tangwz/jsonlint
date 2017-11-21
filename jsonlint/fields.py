@@ -445,7 +445,7 @@ class ObjectField(Field):
     """
     Encapsulate a json object as a field in another json.
 
-    :param form_class:
+    :param json_class:
         A subclass of Json that will be encapsulated.
     """
     def __init__(self, json_class, validators=None, **kwargs):
@@ -514,7 +514,7 @@ class ListField(Field):
     Encapsulate an ordered list of multiple instances of the same field type,
     keeping data as a list.
 
-    >>> authors = ListField(StringField('Name', [validators.DataRequired()]))
+    >>> authors = ListField(StringField([validators.DataRequired()]))
 
     :param unbound_field:
         A partially-instantiated field definition, just like that would be

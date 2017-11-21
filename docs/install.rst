@@ -1,8 +1,15 @@
 Installation
 ============
 
-Install from source:
+Released version
 ----------------
+
+Install or upgrade using pip. ::
+
+    pip install jsonlint
+
+Install from source
+-------------------
 
 Download the source code and install. ::
 

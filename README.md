@@ -5,13 +5,19 @@
 A flexible json validation for python web development.
 
 # Installation
+Install or upgrade using pip.
+
+    pip install jsonlint
+
 Install from source:
 
     python setup.py install
 
 
-# Documentation
-Full documentation is forthcoming.
+# Links
+ - [Documentation](http://jsonlint.readthedocs.io/)
+ - [PyPi](https://pypi.python.org/pypi/jsonlint/0.1.dev0)
+ - [Github](https://github.com/lepture/flask-wtf)
 
-# reference
+# Reference
 jsonlint built on [wtforms](https://github.com/wtforms/wtforms).

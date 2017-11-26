@@ -9,6 +9,8 @@ take input, aggregate errors, and in general function as the glue holding everyt
 To create a form, one makes a subclass of Json and defines the fields declaratively as class attributes::
 
     from jsonlint import Json
+    from jsonlint.fields import StringField
+    from jsonlint.validators import DataRequired
 
     class MyLint(Json):
         name = StringField(validators=[DataRequired()])

@@ -274,7 +274,7 @@ class BooleanFieldTest(TestCase):
     def test_with_postdata_and_model(self):
         json = self.BoringJson({'bool1': 'y'}, obj=self.obj)
         self.assertEqual(json.bool1.data, True)
-        self.assertEqual(json.bool2.data, False)
+        self.assertEqual(json.bool2.data, True)
 
 
 class DateFieldTest(TestCase):

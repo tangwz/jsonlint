@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 import datetime
 import itertools
 
+from .compat import string_types
 from jsonlint.i18n import DummyTranslations
 from jsonlint.validators import StopValidation
 from jsonlint.utils import unset_value
@@ -220,20 +221,20 @@ class Field(object):
             except TypeError:
                 data = self.default
 
-        self.object_data = data
-
         self.process_data(data)
 
         if jsondata is not None:
             if self.name in jsondata:
                 self.raw_data = jsondata.get(self.name)
+
+                try:
+                    self.process_jsondata(self.raw_data)
+                except ValueError as e:
+                    self.process_errors.append(e.args[0])
             else:
                 self.raw_data = []
-
-            try:
-                self.process_jsondata(self.raw_data)
-            except ValueError as e:
-                self.process_errors.append(e.args[0])
+                if not self.data:
+                    self.process_jsondata(self.raw_data)
 
         try:
             for filter in self.filters:
@@ -465,8 +466,6 @@ class ObjectField(Field):
                 data = self.default
             self._obj = data
 
-        self.object_data = data
-
         if isinstance(jsondata, dict):
             jsondata = jsondata.get(self.name)
 
@@ -549,8 +548,6 @@ class ListField(Field):
                 data = self.default()
             except TypeError:
                 data = self.default
-
-        self.object_data = data
 
         if jsondata and isinstance(jsondata, dict):
             jdata = jsondata.get(self.name)

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 import datetime
 import itertools
 
-from .compat import string_types
+from jsonlint.compat import string_types
 from jsonlint.i18n import DummyTranslations
 from jsonlint.validators import StopValidation
 from jsonlint.utils import unset_value
@@ -327,8 +327,8 @@ class StringField(Field):
     """
 
     def process_jsondata(self, value):
-        if value:
-            self.data = str(value)
+        if isinstance(value, string_types):
+            self.data = value
         else:
             self.data = ''
 

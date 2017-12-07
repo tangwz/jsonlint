@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
 from datetime import date, datetime as dt
@@ -189,6 +190,10 @@ class StringFieldTest(TestCase):
         self.assertEqual(json.a(), 'hello')
         json = self.F({'b': 'hello'})
         self.assertEqual(json.a.data, '')
+        # test unicode
+        json = self.F({'a': '你好'})
+        self.assertEqual(json.a.data, '你好')
+        self.assertEqual(json.a(), '你好')
 
 
 class IntegerFieldTest(TestCase):

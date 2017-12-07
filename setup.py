@@ -9,7 +9,7 @@ if sys.version_info < (2, 7):
 
 setup(
     name='jsonlint',
-    version='0.1dev',
+    version='0.1',
     license='BSD',
     url='https://github.com/tangwz/jsonlint',
     author='Tangwz, Thomas Johansson, James Crasta',

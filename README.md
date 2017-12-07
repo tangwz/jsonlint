@@ -16,8 +16,8 @@ Install from source:
 
 # Links
  - [Documentation](http://jsonlint.readthedocs.io/)
- - [PyPi](https://pypi.python.org/pypi/jsonlint/0.1.dev0)
- - [Github](https://github.com/lepture/flask-wtf)
+ - [PyPi](https://pypi.python.org/pypi/jsonlint/0.1)
+ - [Github](https://github.com/tangwz/jsonlint)
 
 # Third-Party Library Integrations
 - [Flask-Lint](https://github.com/tangwz/Flask-Lint) is an integration with the Flask framework.

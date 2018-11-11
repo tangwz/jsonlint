@@ -133,6 +133,8 @@ class ValidatorsTest(TestCase):
 
     def test_input_required(self):
         self.assertEqual(input_required()(self.form, DummyField('foobar', raw_data=['foobar'])), None)
+        self.assertEqual(input_required()(self.form, DummyField(0, raw_data=0)), None)
+        self.assertEqual(input_required()(self.form, DummyField(0.0, raw_data=0.0)), None)
         self.assertRaises(StopValidation, input_required(), self.form, DummyField('', raw_data=['']))
         self.assertEqual(input_required().field_flags, ('required',))
 

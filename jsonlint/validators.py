@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 import re
 import uuid
+from numbers import Number
 
 from jsonlint.compat import string_types, text_type
 
@@ -199,7 +200,11 @@ class DataRequired(object):
         self.message = message
 
     def __call__(self, form, field):
-        if not field.data or isinstance(field.data, string_types) and not field.data.strip():
+        if (
+            not field.data
+            or isinstance(field.data, string_types)
+            and not field.data.strip()
+        ):
             if self.message is None:
                 message = field.gettext('This field is required.')
             else:
@@ -223,7 +228,12 @@ class InputRequired(object):
         self.message = message
 
     def __call__(self, form, field):
-        if not field.raw_data or not field.raw_data[0]:
+        raw_data = field.raw_data
+        if (
+            not isinstance(raw_data, Number)
+            and not raw_data
+            or (isinstance(raw_data, list) and not field.raw_data[0])
+        ):
             if self.message is None:
                 message = field.gettext('This field is required.')
             else:
